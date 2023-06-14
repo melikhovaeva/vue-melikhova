@@ -1,6 +1,6 @@
 <template>
   <section class="comments">
-    <div class="comments__wrapper">
+    <div v-if="comments.length > 0" class="comments__wrapper">
       <h2 class="comments__title">Список комментариев</h2>
       <comment-item 
         v-for="comment in comments"
@@ -8,6 +8,7 @@
         :key="comment.id" 
       />
     </div>
+    <h2 v-else class="comments__title">Комментариев нет</h2>
   </section>
 </template>
 

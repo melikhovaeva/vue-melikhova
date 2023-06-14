@@ -1,7 +1,13 @@
 <template>
-  <comment-form
-    @create="createComment"
-  />
+  <my-button
+    @click="showDialog">
+    Создать комментарий
+  </my-button>
+  <my-dialog v-model:show="dialogVisible"> 
+    <comment-form
+      @create="createComment"
+    />
+  </my-dialog>
   <comment-list 
     :comments="comments"
   />
@@ -10,25 +16,32 @@
 <script>
 import CommentForm from './components/CommentForm.vue';
 import CommentList from './components/CommentList.vue';
+import MyButton from './components/UI/MyButton.vue';
+import MyDialog from './components/UI/MyDialog.vue';
 
 export default {
   components: { 
-    CommentForm, CommentList
+    CommentForm, CommentList,
+    MyDialog,
+    MyButton
     },
   data() {
     return {
       comments: [
-        {id: 1, author: 'Eva', description: 'LaLala'},
-        {id: 2, author: 'Eva', description: 'LaLala 2'},
-        {id: 3, author: 'Eva', description: 'LaLala 3'}
+        // {id: 1, author: 'Eva', description: 'LaLala'},
+        // {id: 2, author: 'Eva', description: 'LaLala 2'},
+        // {id: 3, author: 'Eva', description: 'LaLala 3'}
       ],
-      author: '',
-      description: '',
+      dialogVisible: false,
     }
   },
   methods: {
     createComment(comment) {
       this.comments.push(comment);
+      this.dialogVisible = false;
+    },
+    showDialog() {
+      this.dialogVisible = true;
     }
   },
 }

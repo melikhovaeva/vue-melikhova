@@ -1,7 +1,7 @@
 <template>
   <section class="add-comment">
     <div class="add-comment__wrapper">
-      <h2 class="add-comment__title">Создание поста</h2>
+      <h2 class="add-comment__title">Создание комментария</h2>
       <form class="add-comment__form" @submit.prevent>
         <label class="add-comment__label">
           Автор: 
