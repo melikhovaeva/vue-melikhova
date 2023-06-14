@@ -4,7 +4,8 @@
       <h2 class="comments__title">Список комментариев</h2>
       <comment-item 
         v-for="comment in comments"
-        :comment="comment" 
+        :comment="comment"
+        :key="comment.id" 
       />
     </div>
   </section>

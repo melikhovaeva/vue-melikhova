@@ -5,29 +5,29 @@
       <form class="add-comment__form" @submit.prevent>
         <label class="add-comment__label">
           Автор: 
-          <input 
-            v-model="comment.author"
-            class="add-comment__input" 
-            type="text" 
+          <my-input 
+            v-model="comment.author" 
             name="author" 
+            type="text" 
             placeholder="Enter your name..." 
             required>
+          </my-input>
         </label>
         <label class="add-comment__label">
           Комментарий: 
-          <input
-            v-model="comment.description"
-            class="add-comment__input" 
+          <my-input
+            v-model="comment.description" 
+            name="comment"
             type="text" 
-            name="comment" 
             placeholder="Enter your text..." 
             required>
+          </my-input>
         </label>
-        <button
+        <my-button
           @click="createComment"
           class="add-comment__button">
           Создать
-        </button>
+        </my-button>
       </form>
     </div>
   </section>
@@ -78,20 +78,4 @@ export default {
   flex-direction: column;
 }
 
-.add-comment__input {
-  margin-top: 0.5rem;
-  padding: 1rem;
-  border-radius: 1rem;
-   border: 1px solid teal;
-}
-
-.add-comment__button {
-  margin-top: 15px;
-  padding: 10px 15px;
-  background: none;
-  color: teal;
-  border: 1px solid teal;
-  border-radius: 0.8rem;
-  align-self: flex-end;
-}
 </style>
