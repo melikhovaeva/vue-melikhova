@@ -1,16 +1,21 @@
 <template>
   <section class="comments">
     <div class="comments__wrapper">
-      <article class="comments__comment comment" v-for="comment in comments">
-        <p class="comment__author"> {{ comment.author }} </p>
-        <p class="comment__description"> {{ comment.description }} </p>
-      </article>
+      <h2 class="comments__title">Список комментариев</h2>
+      <comment-item 
+        v-for="comment in comments"
+        :comment="comment" 
+      />
     </div>
   </section>
 </template>
 
 <script>
+import CommentItem from "./CommentItem.vue";
 export default {
+  components: {
+    CommentItem,
+  },
   props: {
     comments: {
       type: Array, 
@@ -32,21 +37,4 @@ export default {
   min-width: 300px;
   max-width: 100%;
 }
-
-.comment {
-  margin-top: 1rem;
-  padding: 15px;
-  border: 2px solid teal;
-  border-radius: 1rem;
-}
-
-.comment__author {
-  font-size: 1.3rem;
-}
-
-.comment__description {
-  font-size: 1.3rem;
-  margin-top: 1rem;
-}
-
 </style>

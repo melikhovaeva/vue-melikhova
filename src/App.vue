@@ -13,7 +13,7 @@ import CommentList from './components/CommentList.vue';
 
 export default {
   components: { 
-    CommentForm, CommentList 
+    CommentForm, CommentList
     },
   data() {
     return {
