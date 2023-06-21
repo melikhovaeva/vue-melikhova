@@ -6,7 +6,7 @@
         <label class="add-comment__label">
           Автор: 
           <my-input 
-            v-model="comment.author" 
+            v-model.trim="comment.author" 
             name="author" 
             type="text" 
             placeholder="Enter your name..." 
@@ -16,7 +16,7 @@
         <label class="add-comment__label">
           Комментарий: 
           <my-input
-            v-model="comment.description" 
+            v-model.trim="comment.text" 
             name="comment"
             type="text" 
             placeholder="Enter your text..." 
@@ -39,7 +39,7 @@ export default {
     return {
       comment: {
         author: '',
-        description: '',
+        text: '',
       }
     }
   },
@@ -49,7 +49,7 @@ export default {
       this.$emit('create', this.comment)
       this.comment = {
         author: '',
-        description: '',
+        text: '',
       }
     }
   }

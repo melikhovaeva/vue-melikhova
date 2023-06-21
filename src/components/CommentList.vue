@@ -2,11 +2,13 @@
   <section class="comments">
     <div v-if="comments.length > 0" class="comments__wrapper">
       <h2 class="comments__title">Список комментариев</h2>
-      <comment-item 
-        v-for="comment in comments"
-        :comment="comment"
-        :key="comment.id" 
-      />
+      <ul class="comments__list">
+        <comment-item 
+          v-for="comment in comments"
+          :comment="comment"
+          :key="comment.id" 
+        />
+      </ul>
     </div>
     <h2 v-else class="comments__title">Комментариев нет</h2>
   </section>
@@ -32,11 +34,14 @@ export default {
   margin: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .comments__wrapper {
   min-width: 300px;
   max-width: 100%;
+}
+
+.comments__list {
+  list-style: none;
 }
 </style>
