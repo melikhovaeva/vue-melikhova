@@ -16,11 +16,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .add-comment__input {
   margin-top: 0.5rem;
-  padding: 1rem;
   border-radius: 1rem;
-  border: 1px solid teal;
+  border: 0;
+  outline: 0;
+  padding: 1rem;
+  background-color: #EBECF0;
+  text-shadow: 1px 1px 0 #FFF;
+  box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+  }
 }
 </style>

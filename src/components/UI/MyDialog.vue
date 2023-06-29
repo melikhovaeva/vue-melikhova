@@ -25,6 +25,7 @@ export default {
 
 <style scoped>
 .dialog {
+  z-index: 2;
   top: 0;
   bottom: 0;
   right: 0;
@@ -36,10 +37,21 @@ export default {
 
 .dialog__content {
   padding: 10px;
-  margin: auto;
+  margin: auto 1rem;
   background: white;
   border-radius: 12px;
-  max-width: 300px;
-  max-height: 400px;
+  max-width: 1200px;
+}
+
+@media (min-width: 400px) {
+  .dialog__content {
+    margin: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .dialog__content {
+    min-width: 600px;
+  }
 }
 </style>
